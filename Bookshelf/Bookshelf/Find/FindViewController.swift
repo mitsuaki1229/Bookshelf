@@ -15,5 +15,4 @@ class FindViewController: UIViewController {
         view.backgroundColor = UIColor.white
     }
 
-
 }

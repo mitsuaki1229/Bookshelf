@@ -5,8 +5,8 @@
 //  Created by Mitsuaki Ihara on 2022/08/24.
 //
 
-import XCTest
 @testable import Bookshelf
+import XCTest
 
 class BookshelfTests: XCTestCase {
 

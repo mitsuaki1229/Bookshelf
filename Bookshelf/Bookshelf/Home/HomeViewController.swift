@@ -15,5 +15,4 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.white
     }
 
-
 }
