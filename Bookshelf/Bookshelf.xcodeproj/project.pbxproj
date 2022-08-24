@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		2CC9727728B6494B001A7855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9727628B6494B001A7855 /* AppDelegate.swift */; };
 		2CC9727928B6494B001A7855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9727828B6494B001A7855 /* SceneDelegate.swift */; };
-		2CC9727B28B6494B001A7855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9727A28B6494B001A7855 /* ViewController.swift */; };
-		2CC9727E28B6494B001A7855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9727C28B6494B001A7855 /* Main.storyboard */; };
 		2CC9728028B6494D001A7855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9727F28B6494D001A7855 /* Assets.xcassets */; };
 		2CC9728328B6494D001A7855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9728128B6494D001A7855 /* LaunchScreen.storyboard */; };
 		2CC9728E28B6494D001A7855 /* BookshelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9728D28B6494D001A7855 /* BookshelfTests.swift */; };
 		2CC9729828B6494D001A7855 /* BookshelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9729728B6494D001A7855 /* BookshelfUITests.swift */; };
 		2CC9729A28B6494D001A7855 /* BookshelfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9729928B6494D001A7855 /* BookshelfUITestsLaunchTests.swift */; };
+		2CC972A728B64AF5001A7855 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972A628B64AF5001A7855 /* TabBarController.swift */; };
+		2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AA28B64C80001A7855 /* HomeViewController.swift */; };
+		2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */; };
+		2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AE28B64D3B001A7855 /* FindViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,6 @@
 		2CC9727328B6494B001A7855 /* Bookshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC9727628B6494B001A7855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC9727828B6494B001A7855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CC9727A28B6494B001A7855 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CC9727D28B6494B001A7855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CC9727F28B6494D001A7855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CC9728228B6494D001A7855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CC9728428B6494D001A7855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,10 @@
 		2CC9729328B6494D001A7855 /* BookshelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookshelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC9729728B6494D001A7855 /* BookshelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfUITests.swift; sourceTree = "<group>"; };
 		2CC9729928B6494D001A7855 /* BookshelfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2CC972A628B64AF5001A7855 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2CC972AA28B64C80001A7855 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		2CC972AE28B64D3B001A7855 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,15 @@
 		2CC9727528B6494B001A7855 /* Bookshelf */ = {
 			isa = PBXGroup;
 			children = (
+				2CC972B228B65108001A7855 /* Find */,
+				2CC972B128B650F4001A7855 /* Library */,
+				2CC972B028B650DA001A7855 /* Home */,
 				2CC9727628B6494B001A7855 /* AppDelegate.swift */,
 				2CC9727828B6494B001A7855 /* SceneDelegate.swift */,
-				2CC9727A28B6494B001A7855 /* ViewController.swift */,
-				2CC9727C28B6494B001A7855 /* Main.storyboard */,
 				2CC9727F28B6494D001A7855 /* Assets.xcassets */,
 				2CC9728128B6494D001A7855 /* LaunchScreen.storyboard */,
 				2CC9728428B6494D001A7855 /* Info.plist */,
+				2CC972A628B64AF5001A7855 /* TabBarController.swift */,
 			);
 			path = Bookshelf;
 			sourceTree = "<group>";
@@ -125,6 +131,30 @@
 				2CC9729928B6494D001A7855 /* BookshelfUITestsLaunchTests.swift */,
 			);
 			path = BookshelfUITests;
+			sourceTree = "<group>";
+		};
+		2CC972B028B650DA001A7855 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2CC972AA28B64C80001A7855 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2CC972B128B650F4001A7855 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		2CC972B228B65108001A7855 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				2CC972AE28B64D3B001A7855 /* FindViewController.swift */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +263,6 @@
 			files = (
 				2CC9728328B6494D001A7855 /* LaunchScreen.storyboard in Resources */,
 				2CC9728028B6494D001A7855 /* Assets.xcassets in Resources */,
-				2CC9727E28B6494B001A7855 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CC9727B28B6494B001A7855 /* ViewController.swift in Sources */,
+				2CC972A728B64AF5001A7855 /* TabBarController.swift in Sources */,
 				2CC9727728B6494B001A7855 /* AppDelegate.swift in Sources */,
 				2CC9727928B6494B001A7855 /* SceneDelegate.swift in Sources */,
+				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
+				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
+				2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2CC9727C28B6494B001A7855 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CC9727D28B6494B001A7855 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CC9728128B6494D001A7855 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +465,6 @@
 				INFOPLIST_FILE = Bookshelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +491,6 @@
 				INFOPLIST_FILE = Bookshelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
