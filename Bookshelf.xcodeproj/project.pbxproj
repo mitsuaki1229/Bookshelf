@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1DF2F928B7BE5C0001B6D4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF2F828B7BE5C0001B6D4 /* ContentViewController.swift */; };
+		2C1DF2FF28B818B60001B6D4 /* Parchment.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1DF2FE28B818B60001B6D4 /* Parchment.xcframework */; };
+		2C1DF30028B818B60001B6D4 /* Parchment.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1DF2FE28B818B60001B6D4 /* Parchment.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CC9727728B6494B001A7855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9727628B6494B001A7855 /* AppDelegate.swift */; };
 		2CC9727928B6494B001A7855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9727828B6494B001A7855 /* SceneDelegate.swift */; };
 		2CC9728028B6494D001A7855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9727F28B6494D001A7855 /* Assets.xcassets */; };
@@ -37,7 +40,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C1DF30128B818B60001B6D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C1DF30028B818B60001B6D4 /* Parchment.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2C1DF2F828B7BE5C0001B6D4 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		2C1DF2FE28B818B60001B6D4 /* Parchment.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Parchment.xcframework; path = Carthage/Build/Parchment.xcframework; sourceTree = "<group>"; };
 		2CC9727328B6494B001A7855 /* Bookshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC9727628B6494B001A7855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC9727828B6494B001A7855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1DF2FF28B818B60001B6D4 /* Parchment.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +100,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1DF2F728B7BE490001B6D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DF2F828B7BE5C0001B6D4 /* ContentViewController.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C1DF2FD28B818B60001B6D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DF2FE28B818B60001B6D4 /* Parchment.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CC9726A28B6494B001A7855 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +123,7 @@
 				2CC9728C28B6494D001A7855 /* BookshelfTests */,
 				2CC9729628B6494D001A7855 /* BookshelfUITests */,
 				2CC9727428B6494B001A7855 /* Products */,
+				2C1DF2FD28B818B60001B6D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +140,7 @@
 		2CC9727528B6494B001A7855 /* Bookshelf */ = {
 			isa = PBXGroup;
 			children = (
+				2C1DF2F728B7BE490001B6D4 /* Resources */,
 				2CC972B228B65108001A7855 /* Find */,
 				2CC972B128B650F4001A7855 /* Library */,
 				2CC972B028B650DA001A7855 /* Home */,
@@ -168,12 +206,15 @@
 				2CC9727028B6494B001A7855 /* Frameworks */,
 				2CC9727128B6494B001A7855 /* Resources */,
 				2CC972B328B65652001A7855 /* Run SwiftLint */,
+				2C1DF30128B818B60001B6D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Bookshelf;
+			packageProductDependencies = (
+			);
 			productName = Bookshelf;
 			productReference = 2CC9727328B6494B001A7855 /* Bookshelf.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +287,8 @@
 				Base,
 			);
 			mainGroup = 2CC9726A28B6494B001A7855;
+			packageReferences = (
+			);
 			productRefGroup = 2CC9727428B6494B001A7855 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -315,6 +358,7 @@
 				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
 				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
 				2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */,
+				2C1DF2F928B7BE5C0001B6D4 /* ContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

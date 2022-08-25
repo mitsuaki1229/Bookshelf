@@ -7,6 +7,10 @@ Displaying a list of books.
 
 ## Install
 
+```shell
+$ carthage bootstrap --platform iOS --use-xcframeworks
+```
+
 ## Usage
 
 ## Licence
