@@ -18,6 +18,8 @@ class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         setUpViewControllers()
+
+        selectedIndex = 1
     }
     
     required init?(coder aDecoder: NSCoder) {
