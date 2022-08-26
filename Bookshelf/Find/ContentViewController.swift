@@ -8,17 +8,16 @@
 import UIKit
 
 final class ContentViewController: UIViewController {
-    convenience init(index: Int) {
-        self.init(title: "View \(index)", content: "\(index)")
-    }
-
-    convenience init(title: String) {
-        self.init(title: title, content: title)
+    convenience init(topCategory: TopCategory) {
+        self.init(title: topCategory.nameCategory, content: "テスト")
     }
 
     init(title: String, content: String) {
         super.init(nibName: nil, bundle: nil)
         self.title = title
+
+        // TODO: UISCrollView
+        // TODO: UICollectionView
 
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 50, weight: UIFont.Weight.thin)

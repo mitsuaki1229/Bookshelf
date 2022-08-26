@@ -11,15 +11,14 @@ import UIKit
 var searchButtonItem: UIBarButtonItem?
 
 class FindViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         view.backgroundColor = UIColor.white
         
         setNavigation()
         setTabNavigation()
-        setButton()
     }
     
     func setNavigation() {
@@ -44,35 +43,38 @@ class FindViewController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.widthAnchor.constraint(equalToConstant: 45).isActive = true
     }
-
+    
     func setTabNavigation() {
-        let viewControllers = [
-            ContentViewController(index: 0),
-            ContentViewController(index: 1),
-            ContentViewController(index: 2),
-            ContentViewController(index: 3),
-        ]
         
-        let pagingViewController = PagingViewController(viewControllers: viewControllers)
+        BookModel().fetch(completion: { (bookAll) in
+            
+            DispatchQueue.main.sync {
+                
+                var viewControllers: [UIViewController] = []
 
-        // Make sure you add the PagingViewController as a child view
-        // controller and constrain it to the edges of the view.
-        addChild(pagingViewController)
-        view.addSubview(pagingViewController.view)
-        pagingViewController.didMove(toParent: self)
-        
-        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pagingViewController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pagingViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        pagingViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pagingViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+                bookAll?.topCategoryList.forEach({ topCategory in
+                    viewControllers.append(ContentViewController(topCategory: topCategory))
+                })
 
-        // TODO UISCrollView
-        // TODO UICollectionView
+                let pagingViewController = PagingViewController(viewControllers: viewControllers)
+
+                self.addChild(pagingViewController)
+                self.view.addSubview(pagingViewController.view)
+                pagingViewController.didMove(toParent: self)
+                
+                pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+                pagingViewController.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+                pagingViewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+                pagingViewController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+                pagingViewController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+
+                self.setButton()
+            }
+        })
     }
-
+    
     @objc
     func buttonPressed(_ sender: UIBarButtonItem) {
-      print("search button touched.")
+        print("search button touched.")
     }
 }
