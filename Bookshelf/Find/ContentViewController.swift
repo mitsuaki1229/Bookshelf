@@ -8,34 +8,54 @@
 import UIKit
 
 final class ContentViewController: UIViewController {
-    convenience init(topCategory: TopCategory) {
-        self.init(title: topCategory.nameCategory, content: "テスト")
+    
+    var subCategoryList: [SubCategory]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
-    init(title: String, content: String) {
+    convenience init(topCategory: TopCategory) {
+        self.init(title: topCategory.nameCategory, content: topCategory.subCategoryList)
+    }
+
+    init(title: String, content: [SubCategory]) {
+        subCategoryList = content
+
         super.init(nibName: nil, bundle: nil)
+
         self.title = title
 
-        // TODO: UISCrollView
-        // TODO: UICollectionView
+        let tableView = UITableView(frame: .zero)
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.dataSource = self
+        tableView.delegate = self
 
-        let label = UILabel(frame: .zero)
-        label.font = UIFont.systemFont(ofSize: 50, weight: UIFont.Weight.thin)
-        label.textColor = UIColor(red: 95 / 255, green: 102 / 255, blue: 108 / 255, alpha: 1)
-        label.textAlignment = .center
-        label.text = content
-        label.sizeToFit()
-
-        view.addSubview(label)
-        view.backgroundColor = .blue
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension ContentViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return subCategoryList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ContentTableViewCell
+        cell.textLabel?.text = subCategoryList[indexPath.row].nameCategory
+        return cell
+    }
+}
+
+extension ContentViewController: UITableViewDelegate {}
