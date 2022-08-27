@@ -89,6 +89,11 @@ extension ContentViewController: UICollectionViewDataSource {
     }
 
     private func getImage(url: String) -> UIImage? {
+        
+        guard Const.kImageDownload else {
+            return nil
+        }
+
         let url = URL(string: url)
         do {
             let data = try Data(contentsOf: url!)
