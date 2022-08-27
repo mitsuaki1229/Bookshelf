@@ -61,8 +61,8 @@ extension ContentViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: indexPath) as! ContentTableViewCell
-        cell.textLabel?.text = subCategoryList[indexPath.row].nameCategory
-        
+        cell.titleLabel?.text = subCategoryList[indexPath.row].nameCategory
+
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         return cell
     }
@@ -78,7 +78,7 @@ extension ContentViewController: UITableViewDelegate {
 extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return subCategoryList.count
+        return subCategoryList[collectionView.tag].bookList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,8 +89,18 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
 
         let cell: ShopCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ShopCollectionViewCell
 
-        // TODO: change images
-        cell.textLabel?.text = subCategoryList[collectionView.tag].bookList[indexPath.row].nameBook
+        cell.imageView!.image = getImage(url: subCategoryList[collectionView.tag].bookList[indexPath.row].imgUrl)
         return cell
+    }
+
+    private func getImage(url: String) -> UIImage? {
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)
+        } catch let err {
+            print("Error: \(err.localizedDescription)")
+            return nil
+        }
     }
 }
