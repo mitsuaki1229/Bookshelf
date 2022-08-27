@@ -8,8 +8,6 @@
 import Parchment
 import UIKit
 
-var searchButtonItem: UIBarButtonItem?
-
 class FindViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -23,7 +21,7 @@ class FindViewController: UIViewController {
     
     func setNavigation() {
         navigationItem.title = "Find"
-        searchButtonItem = UIBarButtonItem(title: "🔎", style: .done, target: self, action: #selector(buttonPressed(_:)))
+        let searchButtonItem = UIBarButtonItem(title: "🔎", style: .done, target: self, action: #selector(buttonPressed(_:)))
         navigationItem.rightBarButtonItem = searchButtonItem
     }
     

@@ -24,6 +24,7 @@
 		2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */; };
 		2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AE28B64D3B001A7855 /* FindViewController.swift */; };
 		2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */; };
+		2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		2CC972AE28B64D3B001A7855 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				2CC972AE28B64D3B001A7855 /* FindViewController.swift */,
 				2C6DEE7228B875E800C3C04F /* BookModel.swift */,
 				2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */,
+				2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				2CC9727728B6494B001A7855 /* AppDelegate.swift in Sources */,
 				2CC9727928B6494B001A7855 /* SceneDelegate.swift in Sources */,
 				2C6DEE7328B875E800C3C04F /* BookModel.swift in Sources */,
+				2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */,
 				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
 				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
 				2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */,

@@ -7,9 +7,11 @@
 
 import UIKit
 
+private let kContentTableViewheight = 150
+
 final class ContentViewController: UIViewController {
     
-    var subCategoryList: [SubCategory]
+    private var subCategoryList: [SubCategory]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ final class ContentViewController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "ContentTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -51,11 +53,44 @@ extension ContentViewController: UITableViewDataSource {
         return subCategoryList.count
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ContentTableViewCell else { return }
+
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ContentTableViewCell
+        let cell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: indexPath) as! ContentTableViewCell
         cell.textLabel?.text = subCategoryList[indexPath.row].nameCategory
+        
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         return cell
     }
 }
 
-extension ContentViewController: UITableViewDelegate {}
+extension ContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(kContentTableViewheight)
+
+    }
+}
+
+extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return subCategoryList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: kContentTableViewheight - 30)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell: ShopCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ShopCollectionViewCell
+
+        // TODO: change images
+        cell.textLabel?.text = subCategoryList[collectionView.tag].bookList[indexPath.row].nameBook
+        return cell
+    }
+}

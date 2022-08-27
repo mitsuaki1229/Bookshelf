@@ -36,7 +36,7 @@ struct Book: Codable {
 }
 
 class BookModel: NSObject {
-    func fetch(completion: @escaping (BookAll?) -> ()) {
+    func fetch(completion: @escaping (BookAll?) -> Void) {
         
         var bookAll: BookAll?
         
