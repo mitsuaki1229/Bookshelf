@@ -32,10 +32,10 @@ final class ContentTableViewCell: UITableViewCell {
         titleLabel?.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
 
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize.zero
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        flowLayout.scrollDirection = .horizontal
         
         collectionView = UICollectionView(
             frame: self.frame,
