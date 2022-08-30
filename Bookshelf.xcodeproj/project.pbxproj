@@ -25,6 +25,11 @@
 		2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AE28B64D3B001A7855 /* FindViewController.swift */; };
 		2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */; };
 		2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */; };
+		2CE6AC6928BA3C300001AAB7 /* BookDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */; };
+		2CE6AC6C28BA407C0001AAB7 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */; };
+		2CE6AC6D28BA407C0001AAB7 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CE6AC6E28BA407C0001AAB7 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */; };
+		2CE6AC6F28BA407C0001AAB7 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2C1DF30028B818B60001B6D4 /* Parchment.xcframework in Embed Frameworks */,
+				2CE6AC6F28BA407C0001AAB7 /* RealmSwift.xcframework in Embed Frameworks */,
+				2CE6AC6D28BA407C0001AAB7 /* Realm.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +87,9 @@
 		2CC972AE28B64D3B001A7855 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsController.swift; sourceTree = "<group>"; };
+		2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
+		2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1DF2FF28B818B60001B6D4 /* Parchment.xcframework in Frameworks */,
+				2CE6AC6E28BA407C0001AAB7 /* RealmSwift.xcframework in Frameworks */,
+				2CE6AC6C28BA407C0001AAB7 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +123,8 @@
 		2C1DF2FD28B818B60001B6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */,
+				2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */,
 				2C1DF2FE28B818B60001B6D4 /* Parchment.xcframework */,
 			);
 			name = Frameworks;
@@ -140,6 +154,7 @@
 		2CC9727528B6494B001A7855 /* Bookshelf */ = {
 			isa = PBXGroup;
 			children = (
+				2CE6AC6728BA3BBB0001AAB7 /* Book */,
 				2C6DEE7028B8751100C3C04F /* Const.swift */,
 				2CC972B228B65108001A7855 /* Find */,
 				2CC972B128B650F4001A7855 /* Library */,
@@ -197,6 +212,14 @@
 				2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */,
 			);
 			path = Find;
+			sourceTree = "<group>";
+		};
+		2CE6AC6728BA3BBB0001AAB7 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +386,7 @@
 				2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */,
 				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
 				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
+				2CE6AC6928BA3C300001AAB7 /* BookDetailsController.swift in Sources */,
 				2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */,
 				2C6DEE7128B8751100C3C04F /* Const.swift in Sources */,
 				2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */,
@@ -535,6 +559,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bookshelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -561,6 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bookshelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

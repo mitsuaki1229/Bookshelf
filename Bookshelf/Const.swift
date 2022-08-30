@@ -9,5 +9,6 @@ import Foundation
 
 struct Const {
     static let kServerEndpoint = ""
+    static let kCdnEndpoint = ""
     static let kImageDownload = false
 }
