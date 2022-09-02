@@ -103,7 +103,7 @@ extension ContentViewController: UICollectionViewDataSource {
 
 extension ContentViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item) // TODO: not work.
+        print(indexPath.item) // TODO: touch not work..
     }
 }
 
