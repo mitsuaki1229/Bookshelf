@@ -33,6 +33,7 @@ final class HomeViewController: UIViewController {
         view.addSubview(bookDetailsController.view)
         bookDetailsController.didMove(toParent: self)
         
+        bookDetailsController.view.translatesAutoresizingMaskIntoConstraints = false
         bookDetailsController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         bookDetailsController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         bookDetailsController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

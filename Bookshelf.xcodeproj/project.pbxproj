@@ -30,6 +30,7 @@
 		2CE6AC6D28BA407C0001AAB7 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CE6AC6E28BA407C0001AAB7 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */; };
 		2CE6AC6F28BA407C0001AAB7 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CE6AC7128BF9AE90001AAB7 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC7028BF9AE90001AAB7 /* BookDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsController.swift; sourceTree = "<group>"; };
 		2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		2CE6AC7028BF9AE90001AAB7 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */,
+				2CE6AC7028BF9AE90001AAB7 /* BookDetailsView.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
 				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
 				2CE6AC6928BA3C300001AAB7 /* BookDetailsController.swift in Sources */,
+				2CE6AC7128BF9AE90001AAB7 /* BookDetailsView.swift in Sources */,
 				2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */,
 				2C6DEE7128B8751100C3C04F /* Const.swift in Sources */,
 				2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */,
