@@ -37,7 +37,7 @@ final class FindViewController: UIViewController {
 
     func setTabNavigation() {
         
-        BookModel().fetch(completion: { (bookAll) in
+        BookApiModel().fetchAll(completion: { (bookAll) in
             
             DispatchQueue.main.sync {
                 

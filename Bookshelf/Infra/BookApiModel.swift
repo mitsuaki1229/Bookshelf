@@ -1,5 +1,5 @@
 //
-//  BookModel.swift
+//  BookApiModel.swift
 //  Bookshelf
 //
 //  Created by Mitsuaki Ihara on 2022/08/26.
@@ -35,8 +35,8 @@ struct Book: Codable {
     var createAt: String
 }
 
-class BookModel: NSObject {
-    func fetch(completion: @escaping (BookAll?) -> Void) {
+class BookApiModel: NSObject {
+    func fetchAll(completion: @escaping (BookAll?) -> Void) {
         
         var bookAll: BookAll?
         
