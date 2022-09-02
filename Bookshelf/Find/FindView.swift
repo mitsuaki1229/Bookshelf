@@ -9,13 +9,22 @@ import UIKit
 
 class FindView: UIView {
 
-    let button = UIButton(frame: .zero)
+    let button = { () -> UIButton in
+        let button = UIButton()
+        button.tintColor = .white
+        button.backgroundColor = UIColor.red
+        button.layer.cornerRadius = 25
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        return button
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        // !!!: debug cooler
         backgroundColor = .systemIndigo
-        
+        // !!!: debug cooler
+
         addSubviews()
         installConstraints()
     }
@@ -25,11 +34,6 @@ class FindView: UIView {
     }
     
     func installConstraints() {
-        button.tintColor = .white
-        button.backgroundColor = UIColor.red
-        button.layer.cornerRadius = 25
-        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60).isActive = true
         button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true

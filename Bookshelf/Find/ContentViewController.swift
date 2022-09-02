@@ -13,6 +13,10 @@ final class ContentViewController: UIViewController {
     
     private var subCategoryList: [SubCategory]
 
+    override func loadView() {
+        view = ContentView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,18 +32,10 @@ final class ContentViewController: UIViewController {
 
         self.title = title
 
-        let tableView = UITableView(frame: .zero)
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        tableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "ContentTableViewCell")
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        let view = self.view as! ContentView
+        view.tableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "ContentTableViewCell")
+        view.tableView.dataSource = self
+        view.tableView.delegate = self
     }
 
     required init?(coder _: NSCoder) {
@@ -61,7 +57,7 @@ extension ContentViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: indexPath) as! ContentTableViewCell
-        cell.titleLabel?.text = subCategoryList[indexPath.row].nameCategory
+        cell.titleLabel.text = subCategoryList[indexPath.row].nameCategory
 
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         return cell
