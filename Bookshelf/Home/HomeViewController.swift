@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
                         isUnlimited: 1,
                         createAt: "")
 
-        let bookDetailsController = BookDetailsController(book: book)
+        let bookDetailsController = BookDetailsViewController(book: book)
 
         view.addSubview(bookDetailsController.view)
         bookDetailsController.didMove(toParent: self)

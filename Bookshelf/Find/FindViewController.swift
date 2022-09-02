@@ -10,6 +10,10 @@ import UIKit
 
 final class FindViewController: UIViewController {
     
+    override func loadView() {
+        view = FindView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,22 +30,11 @@ final class FindViewController: UIViewController {
     }
     
     func setButton() {
-        let button = UIButton(type: UIButton.ButtonType.system)
-
-        button.addTarget(self, action: #selector(buttonPressed(_:)), for: UIControl.Event.touchUpInside)
-        button.tintColor = .white
-        button.backgroundColor = UIColor.red
-        button.layer.cornerRadius = 25
-        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        view.addSubview(button)
-
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        let view = self.view as! FindView
+        view.button.addTarget(self, action: #selector(buttonPressed(_:)), for: UIControl.Event.touchUpInside)
+        view.bringSubviewToFront(view.button)
     }
-    
+
     func setTabNavigation() {
         
         BookModel().fetch(completion: { (bookAll) in

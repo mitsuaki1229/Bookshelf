@@ -23,9 +23,10 @@
 		2CC972AB28B64C80001A7855 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AA28B64C80001A7855 /* HomeViewController.swift */; };
 		2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */; };
 		2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC972AE28B64D3B001A7855 /* FindViewController.swift */; };
+		2CE5D0A928C22F7200CB9C9E /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE5D0A828C22F7200CB9C9E /* FindView.swift */; };
 		2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */; };
 		2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */; };
-		2CE6AC6928BA3C300001AAB7 /* BookDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */; };
+		2CE6AC6928BA3C300001AAB7 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6AC6828BA3C300001AAB7 /* BookDetailsViewController.swift */; };
 		2CE6AC6C28BA407C0001AAB7 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */; };
 		2CE6AC6D28BA407C0001AAB7 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CE6AC6E28BA407C0001AAB7 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */; };
@@ -86,9 +87,10 @@
 		2CC972AA28B64C80001A7855 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CC972AC28B64CD5001A7855 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		2CC972AE28B64D3B001A7855 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		2CE5D0A828C22F7200CB9C9E /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
-		2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsController.swift; sourceTree = "<group>"; };
+		2CE6AC6828BA3C300001AAB7 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		2CE6AC6A28BA407C0001AAB7 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		2CE6AC6B28BA407C0001AAB7 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
 		2CE6AC7028BF9AE90001AAB7 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2C6DEE7228B875E800C3C04F /* BookModel.swift */,
 				2CE6AC6328B8F6640001AAB7 /* ContentTableViewCell.swift */,
 				2CE6AC6528B9A8B20001AAB7 /* ContentCollectionViewCell.swift */,
+				2CE5D0A828C22F7200CB9C9E /* FindView.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -219,7 +222,7 @@
 		2CE6AC6728BA3BBB0001AAB7 /* Book */ = {
 			isa = PBXGroup;
 			children = (
-				2CE6AC6828BA3C300001AAB7 /* BookDetailsController.swift */,
+				2CE6AC6828BA3C300001AAB7 /* BookDetailsViewController.swift */,
 				2CE6AC7028BF9AE90001AAB7 /* BookDetailsView.swift */,
 			);
 			path = Book;
@@ -385,11 +388,12 @@
 				2CC972A728B64AF5001A7855 /* TabBarController.swift in Sources */,
 				2CC9727728B6494B001A7855 /* AppDelegate.swift in Sources */,
 				2CC9727928B6494B001A7855 /* SceneDelegate.swift in Sources */,
+				2CE5D0A928C22F7200CB9C9E /* FindView.swift in Sources */,
 				2C6DEE7328B875E800C3C04F /* BookModel.swift in Sources */,
 				2CE6AC6628B9A8B20001AAB7 /* ContentCollectionViewCell.swift in Sources */,
 				2CC972AD28B64CD5001A7855 /* LibraryViewController.swift in Sources */,
 				2CC972AF28B64D3B001A7855 /* FindViewController.swift in Sources */,
-				2CE6AC6928BA3C300001AAB7 /* BookDetailsController.swift in Sources */,
+				2CE6AC6928BA3C300001AAB7 /* BookDetailsViewController.swift in Sources */,
 				2CE6AC7128BF9AE90001AAB7 /* BookDetailsView.swift in Sources */,
 				2CE6AC6428B8F6640001AAB7 /* ContentTableViewCell.swift in Sources */,
 				2C6DEE7128B8751100C3C04F /* Const.swift in Sources */,

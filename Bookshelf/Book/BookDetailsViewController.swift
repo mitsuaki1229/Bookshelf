@@ -1,5 +1,5 @@
 //
-//  BookDetailsController.swift
+//  BookDetailsViewController.swift
 //  Bookshelf
 //
 //  Created by Mitsuaki Ihara on 2022/08/27.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BookDetailsController: UIViewController {
+final class BookDetailsViewController: UIViewController {
 
     var book: Book?
 
