@@ -30,7 +30,7 @@ final class ContentTableViewCell: UITableViewCell {
             collectionViewLayout: flowLayout
         )
         
-        collectionView.register(ShopCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
         
         return collectionView
     }()

@@ -78,9 +78,9 @@ extension ContentViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell: ShopCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ShopCollectionViewCell
+        let cell: ContentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ContentCollectionViewCell
 
-        cell.imageView!.image = getImage(url: subCategoryList[collectionView.tag].bookList[indexPath.row].imgUrl)
+        cell.imageView.image = getImage(url: subCategoryList[collectionView.tag].bookList[indexPath.row].imgUrl)
         return cell
     }
 

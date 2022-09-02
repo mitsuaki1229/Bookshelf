@@ -7,23 +7,31 @@
 
 import UIKit
 
-final class ShopCollectionViewCell: UICollectionViewCell {
+final class ContentCollectionViewCell: UICollectionViewCell {
     
-    var imageView: UIImageView?
+    let imageView = UIImageView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        imageView = UIImageView(frame: .zero)
-        addSubview(imageView!)
+        // !!!: debug cooler
+        imageView.backgroundColor = .blue
+        // !!!: debug cooler
 
-        imageView?.translatesAutoresizingMaskIntoConstraints = false
-        imageView?.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        imageView?.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageView?.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageView?.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
-        imageView?.backgroundColor = .blue
+        addSubviews()
+        installConstraints()
+    }
+    
+    func addSubviews() {
+        addSubview(imageView)
+    }
+    
+    func installConstraints() {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
