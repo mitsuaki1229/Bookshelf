@@ -80,23 +80,25 @@ extension ContentViewController: UICollectionViewDataSource {
         
         let cell: ContentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as! ContentCollectionViewCell
         
-        cell.imageView.image = getImage(url: subCategoryList[collectionView.tag].bookList[indexPath.row].imgUrl)
+        getImage(url: subCategoryList[collectionView.tag].bookList[indexPath.row].imgUrl) { image in
+            DispatchQueue.main.async {
+                cell.imageView.image = image
+            }
+        }
         return cell
     }
     
-    private func getImage(url: String) -> UIImage? {
+    private func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
         
-        guard Const.kImageDownload else {
-            return nil
-        }
-        
-        let url = URL(string: url)
-        do {
-            let data = try Data(contentsOf: url!)
-            return UIImage(data: data)
-        } catch let err {
-            print("Error: \(err.localizedDescription)")
-            return nil
+        DispatchQueue.global().async {
+            let url = URL(string: url)
+            do {
+                let data = try Data(contentsOf: url!)
+                completion(UIImage(data: data))
+            } catch let err {
+                print("Error: \(err.localizedDescription)")
+                completion(nil)
+            }
         }
     }
 }

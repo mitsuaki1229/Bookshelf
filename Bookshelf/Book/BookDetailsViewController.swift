@@ -31,7 +31,11 @@ final class BookDetailsViewController: UIViewController {
         updateMyBookButton()
         
         let view = self.view as! BookDetailsView
-        view.imageView.image = getImage(url: book?.imgUrl ?? "")
+        getImage(url: book?.imgUrl ?? "") { image in
+            DispatchQueue.main.async {
+                view.imageView.image = image
+            }
+        }
         view.nameBookLabel.text = book?.nameBook
         view.authorLabel.text = "Author:" + book!.author
         view.publisherLabel.text = "Publisher:" + book!.publisher
@@ -47,19 +51,17 @@ final class BookDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = hamburgerButtonItem
     }
     
-    private func getImage(url: String) -> UIImage? {
+    private func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
         
-        guard Const.kImageDownload else {
-            return nil
-        }
-        
-        let url = URL(string: url)
-        do {
-            let data = try Data(contentsOf: url!)
-            return UIImage(data: data)
-        } catch let err {
-            print("Error: \(err.localizedDescription)")
-            return nil
+        DispatchQueue.global().async {
+            let url = URL(string: url)
+            do {
+                let data = try Data(contentsOf: url!)
+                completion(UIImage(data: data))
+            } catch let err {
+                print("Error: \(err.localizedDescription)")
+                completion(nil)
+            }
         }
     }
     

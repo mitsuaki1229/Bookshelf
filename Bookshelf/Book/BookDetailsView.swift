@@ -149,10 +149,7 @@ class BookDetailsView: UIView {
         super.init(frame: frame)
         
         backgroundColor = .white
-        
-        if !Const.kImageDownload {
-            imageView.backgroundColor = .blue
-        }
+        imageView.backgroundColor = .blue
         
         addSubviews()
         installConstraints()
