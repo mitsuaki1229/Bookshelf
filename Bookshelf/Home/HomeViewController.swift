@@ -9,22 +9,15 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
+    override func loadView() {
+        view = HomeView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = UIButton()
-        button.addTarget(self, action: #selector(buttonPressed(_:)), for: UIControl.Event.touchUpInside)
-        button.setTitle("Book details mock button", for: .normal)
-        button.tintColor = .black
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        button.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        button.backgroundColor = .red
-        
-        view.backgroundColor = UIColor.white
+        let view = self.view as! HomeView
+        view.button.addTarget(self, action: #selector(buttonPressed(_:)), for: UIControl.Event.touchUpInside)
         
         pushMockBookDetailsController()
     }
