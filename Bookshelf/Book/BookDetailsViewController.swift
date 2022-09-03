@@ -26,8 +26,9 @@ final class BookDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setNavigation()
+        updateMyBookButton()
 
         let view = self.view as! BookDetailsView
         view.imageView.image = getImage(url: book?.imgUrl ?? "")
@@ -37,9 +38,6 @@ final class BookDetailsViewController: UIViewController {
         
         view.myBookButton.addTarget(self, action: #selector(myBookButtonPressed(_:)), for: UIControl.Event.touchUpInside)
         view.purchaseButton.addTarget(self, action: #selector(purchaseButtonPressed(_:)), for: UIControl.Event.touchUpInside)
-        
-        // TODO: Save MyBook.
-        // TODO: Set layout.
     }
     
     func setNavigation() {
@@ -64,12 +62,34 @@ final class BookDetailsViewController: UIViewController {
             return nil
         }
     }
-    
+
+    func updateMyBookButton() {
+
+        let view = self.view as! BookDetailsView
+
+        let myBookModel = MyBookModel()
+        let myBook = myBookModel.getBy(idBook: book!.idBook)
+        if myBook != nil {
+            view.myBookButton.setTitle("Add MyBooks", for: .normal)
+        } else {
+            view.myBookButton.setTitle("Remove MyBooks", for: .normal)
+        }
+    }
+
     @objc
     func myBookButtonPressed(_ sender: UIBarButtonItem) {
         print("my book button touched.")
+
+        let myBookModel = MyBookModel()
+        let myBook = myBookModel.getBy(idBook: book!.idBook)
+        if myBook != nil {
+            myBookModel.remove(idBook: book!.idBook)
+        } else {
+            myBookModel.add(idBook: book!.idBook)
+        }
+        updateMyBookButton()
     }
-    
+
     @objc
     func purchaseButtonPressed(_ sender: UIBarButtonItem) {
         print("purchase button touched.")
