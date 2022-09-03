@@ -44,7 +44,7 @@ final class ContentTableViewCell: UITableViewCell {
     
     private func addSubviews() {
         addSubview(titleLabel)
-        addSubview(collectionView)
+        self.contentView.addSubview(collectionView)
     }
     
     private func installConstraints() {
