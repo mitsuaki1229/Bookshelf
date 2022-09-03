@@ -14,6 +14,10 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        if !Const.kImageDownload {
+            imageView.backgroundColor = .blue
+        }
+        
         addSubviews()
         installConstraints()
     }

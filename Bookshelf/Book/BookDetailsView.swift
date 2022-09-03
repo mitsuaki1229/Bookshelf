@@ -146,6 +146,10 @@ class BookDetailsView: UIView {
         
         backgroundColor = .white
         
+        if !Const.kImageDownload {
+            imageView.backgroundColor = .blue
+        }
+        
         addSubviews()
         installConstraints()
     }
@@ -173,32 +177,32 @@ class BookDetailsView: UIView {
         
         nameBookLabel.translatesAutoresizingMaskIntoConstraints = false
         nameBookLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        nameBookLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        nameBookLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15).isActive = true
         nameBookLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         nameBookLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.topAnchor.constraint(equalTo: nameBookLabel.bottomAnchor).isActive = true
-        authorLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        authorLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15).isActive = true
         authorLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         authorLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         publisherLabel.translatesAutoresizingMaskIntoConstraints = false
         publisherLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor).isActive = true
-        publisherLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        publisherLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15).isActive = true
         publisherLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         publisherLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         myBookButton.translatesAutoresizingMaskIntoConstraints = false
         myBookButton.topAnchor.constraint(equalTo: publisherLabel.bottomAnchor).isActive = true
-        myBookButton.leadingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        myBookButton.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15).isActive = true
         myBookButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        myBookButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        myBookButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
         
         purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.topAnchor.constraint(equalTo: publisherLabel.bottomAnchor).isActive = true
-        purchaseButton.leadingAnchor.constraint(equalTo: myBookButton.trailingAnchor).isActive = true
-        purchaseButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        purchaseButton.leadingAnchor.constraint(equalTo: myBookButton.trailingAnchor, constant: 5).isActive = true
+        purchaseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5).isActive = true
         purchaseButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         goalView.translatesAutoresizingMaskIntoConstraints = false
