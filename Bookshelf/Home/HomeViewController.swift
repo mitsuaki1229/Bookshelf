@@ -12,14 +12,27 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigation()
-        
+        let button = UIButton()
+        button.addTarget(self, action: #selector(buttonPressed(_:)), for: UIControl.Event.touchUpInside)
+        button.setTitle("Book details mock button", for: .normal)
+        button.tintColor = .black
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        button.backgroundColor = .red
+
         view.backgroundColor = UIColor.white
+        
+        pushMockBookDetailsController()
+    }
 
-        // !!!: BookDetailsController is mock use.
-
+    // !!!: BookDetailsController is mock use.
+    func pushMockBookDetailsController() {
         let book = Book(idBook: "ask_deru1000",
-                        nameBook:"TOEIC L&R テスト 文法問題 でる1000問",
+                        nameBook: "TOEIC L&R テスト 文法問題 でる1000問",
                         publisher: "アスク出版" ,
                         author: "TEX加藤",
                         imgUrl: Const.kCdnEndpoint + "ask_deru1000.jpg",
@@ -30,28 +43,11 @@ final class HomeViewController: UIViewController {
 
         let bookDetailsController = BookDetailsViewController(book: book)
 
-        view.addSubview(bookDetailsController.view)
-        bookDetailsController.didMove(toParent: self)
-        
-        bookDetailsController.view.translatesAutoresizingMaskIntoConstraints = false
-        bookDetailsController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        bookDetailsController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bookDetailsController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        bookDetailsController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
-
-    func setNavigation() {
-        navigationItem.title = "Book introduction"
-
-        let backButtonItem = UIBarButtonItem(title: "←", style: .done, target: self, action: #selector(buttonPressed(_:)))
-        navigationItem.leftBarButtonItem = backButtonItem
-
-        let hamburgerButtonItem = UIBarButtonItem(title: ":", style: .done, target: self, action: #selector(buttonPressed(_:)))
-        navigationItem.rightBarButtonItem = hamburgerButtonItem
+        navigationController?.pushViewController(bookDetailsController, animated: true)
     }
 
     @objc
     func buttonPressed(_ sender: UIBarButtonItem) {
-        print("search button touched.")
+        pushMockBookDetailsController()
     }
 }
