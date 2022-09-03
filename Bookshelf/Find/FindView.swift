@@ -21,9 +21,9 @@ class FindView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        // !!!: debug cooler
+#if DEBUG
         backgroundColor = .systemIndigo
-        // !!!: debug cooler
+#endif
 
         addSubviews()
         installConstraints()

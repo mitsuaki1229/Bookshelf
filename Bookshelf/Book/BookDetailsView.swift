@@ -47,7 +47,7 @@ class BookDetailsView: UIView {
             label.text = "Mastery rate target, Expiration date."
             return label
         }()
-
+        
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -68,7 +68,7 @@ class BookDetailsView: UIView {
             label.text = "Learning rate."
             return label
         }()
-
+        
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -89,7 +89,7 @@ class BookDetailsView: UIView {
             label.text = "Learning time."
             return label
         }()
-
+        
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -110,7 +110,7 @@ class BookDetailsView: UIView {
             label.text = "Learning method."
             return label
         }()
-
+        
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -119,7 +119,7 @@ class BookDetailsView: UIView {
         label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         return view
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -127,8 +127,8 @@ class BookDetailsView: UIView {
         
         addSubviews()
         installConstraints()
-
-        // !!!: debug cooler
+        
+#if DEBUG
         imageView.backgroundColor = .yellow
         nameBookLabel.backgroundColor = .green
         authorLabel.backgroundColor = .brown
@@ -139,9 +139,9 @@ class BookDetailsView: UIView {
         learningRateView.backgroundColor = .orange
         learningTimeView.backgroundColor = .purple
         learningMethodView.backgroundColor = .magenta
-        // !!!: debug cooler
+#endif
     }
-
+    
     func addSubviews() {
         addSubview(imageView)
         addSubview(nameBookLabel)
@@ -154,7 +154,7 @@ class BookDetailsView: UIView {
         addSubview(learningTimeView)
         addSubview(learningMethodView)
     }
-
+    
     func installConstraints() {
         
         imageView.translatesAutoresizingMaskIntoConstraints = false

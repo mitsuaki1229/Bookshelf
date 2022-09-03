@@ -14,9 +14,9 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        // !!!: debug cooler
+#if DEBUG
         imageView.backgroundColor = .blue
-        // !!!: debug cooler
+#endif
 
         addSubviews()
         installConstraints()
