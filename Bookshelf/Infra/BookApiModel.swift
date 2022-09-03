@@ -45,8 +45,13 @@ class BookApiModel: NSObject {
             do {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                bookAll = try jsonDecoder.decode(BookAll.self, from: data!)
-                completion(bookAll)
+                if data != nil {
+                    bookAll = try jsonDecoder.decode(BookAll.self, from: data!)
+                    completion(bookAll)
+                } else {
+                    print("Please set Const.kServerEndpoint & Const.kCdnEndpoint")
+                    completion(nil)
+                }
             } catch {
                 print(error)
                 completion(nil)
