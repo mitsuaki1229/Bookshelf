@@ -18,9 +18,14 @@ $ carthage bootstrap --platform iOS --use-xcframeworks
 
 ## Usage
 
-1. Set Server URL to Const.kServerEndpoint.
-2. Set CDN URL to Const.kCdnEndpoint.
-3. Build & open App.
+1. Prepare server and CDN.
+2. Set Server URL to Const.kServerEndpoint.
+3. Set CDN URL to Const.kCdnEndpoint.
+4. Build & open App.
+
+### Server JSON Format
+
+Please look at the BookApiModel..
 
 ### Find
 
