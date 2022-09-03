@@ -13,20 +13,20 @@ final class ContentCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
 #if DEBUG
         imageView.backgroundColor = .blue
 #endif
-
+        
         addSubviews()
         installConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(imageView)
     }
     
-    func installConstraints() {
+    private func installConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

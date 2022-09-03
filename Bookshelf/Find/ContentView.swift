@@ -8,32 +8,32 @@
 import UIKit
 
 class ContentView: UIView {
-
+    
     let tableView = UITableView(frame: .zero)
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
 #if DEBUG
         backgroundColor = .systemIndigo
 #endif
-  
+        
         addSubviews()
         installConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(tableView)
     }
     
-    func installConstraints() {
+    private func installConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

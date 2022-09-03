@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class MyBookModel: NSObject {
-
+    
     func getBy(idBook: String) -> MyBook? {
         var realm: Realm?
         
@@ -18,12 +18,12 @@ class MyBookModel: NSObject {
         } catch {
             print("Realm error \(error)")
         }
-
+        
         return realm?.objects(MyBook.self).filter("idBook == %@", idBook).first
     }
-
+    
     func add(idBook: String) {
-
+        
         let myBook = MyBook()
         myBook.idBook = idBook
         
@@ -53,9 +53,9 @@ class MyBookModel: NSObject {
         } catch {
             print("Realm error \(error)")
         }
-
+        
         let myBook = realm?.objects(MyBook.self).filter("idBook == %@", idBook).first
-
+        
         do {
             try realm?.write {
                 realm?.delete(myBook!)

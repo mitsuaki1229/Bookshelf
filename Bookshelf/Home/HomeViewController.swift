@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,14 +23,14 @@ final class HomeViewController: UIViewController {
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         button.backgroundColor = .red
-
+        
         view.backgroundColor = UIColor.white
         
         pushMockBookDetailsController()
     }
-
+    
     // !!!: BookDetailsController is mock use.
-    func pushMockBookDetailsController() {
+    private func pushMockBookDetailsController() {
         let book = Book(idBook: "ask_deru1000",
                         nameBook: "TOEIC L&R テスト 文法問題 でる1000問",
                         publisher: "アスク出版" ,
@@ -40,14 +40,14 @@ final class HomeViewController: UIViewController {
                         hasPurchased: false,
                         isUnlimited: 1,
                         createAt: "")
-
+        
         let bookDetailsController = BookDetailsViewController(book: book)
-
+        
         navigationController?.pushViewController(bookDetailsController, animated: true)
     }
-
+    
     @objc
-    func buttonPressed(_ sender: UIBarButtonItem) {
+    private func buttonPressed(_ sender: UIBarButtonItem) {
         pushMockBookDetailsController()
     }
 }

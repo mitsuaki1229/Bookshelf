@@ -164,18 +164,18 @@
 		2CC9727528B6494B001A7855 /* Bookshelf */ = {
 			isa = PBXGroup;
 			children = (
-				2CE5D0AA28C233EC00CB9C9E /* Infra */,
-				2CE6AC6728BA3BBB0001AAB7 /* Book */,
-				2C6DEE7028B8751100C3C04F /* Const.swift */,
+				2CC9728428B6494D001A7855 /* Info.plist */,
+				2CC972B028B650DA001A7855 /* Home */,
 				2CC972B228B65108001A7855 /* Find */,
 				2CC972B128B650F4001A7855 /* Library */,
-				2CC972B028B650DA001A7855 /* Home */,
+				2CE6AC6728BA3BBB0001AAB7 /* Book */,
+				2CE5D0AA28C233EC00CB9C9E /* Infra */,
+				2CC972A628B64AF5001A7855 /* TabBarController.swift */,
+				2C6DEE7028B8751100C3C04F /* Const.swift */,
 				2CC9727628B6494B001A7855 /* AppDelegate.swift */,
 				2CC9727828B6494B001A7855 /* SceneDelegate.swift */,
-				2CC9727F28B6494D001A7855 /* Assets.xcassets */,
 				2CC9728128B6494D001A7855 /* LaunchScreen.storyboard */,
-				2CC9728428B6494D001A7855 /* Info.plist */,
-				2CC972A628B64AF5001A7855 /* TabBarController.swift */,
+				2CC9727F28B6494D001A7855 /* Assets.xcassets */,
 			);
 			path = Bookshelf;
 			sourceTree = "<group>";

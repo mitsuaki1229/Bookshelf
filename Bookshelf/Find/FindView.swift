@@ -8,7 +8,7 @@
 import UIKit
 
 class FindView: UIView {
-
+    
     let button = { () -> UIButton in
         let button = UIButton()
         button.tintColor = .white
@@ -17,23 +17,23 @@ class FindView: UIView {
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         return button
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
 #if DEBUG
         backgroundColor = .systemIndigo
 #endif
-
+        
         addSubviews()
         installConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(button)
     }
     
-    func installConstraints() {
+    private func installConstraints() {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60).isActive = true
         button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true

@@ -11,8 +11,8 @@ final class ContentTableViewCell: UITableViewCell {
     
     let titleLabel = { () -> UILabel in
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
+        label.textColor = .black
         label.textAlignment = .left
         label.sizeToFit()
         return label
@@ -47,12 +47,12 @@ final class ContentTableViewCell: UITableViewCell {
         installConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(titleLabel)
         addSubview(collectionView)
     }
     
-    func installConstraints() {
+    private func installConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

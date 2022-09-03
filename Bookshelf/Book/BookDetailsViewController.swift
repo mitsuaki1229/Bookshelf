@@ -29,7 +29,7 @@ final class BookDetailsViewController: UIViewController {
         
         setNavigation()
         updateMyBookButton()
-
+        
         let view = self.view as! BookDetailsView
         view.imageView.image = getImage(url: book?.imgUrl ?? "")
         view.nameBookLabel.text = book?.nameBook
@@ -40,7 +40,7 @@ final class BookDetailsViewController: UIViewController {
         view.purchaseButton.addTarget(self, action: #selector(purchaseButtonPressed(_:)), for: UIControl.Event.touchUpInside)
     }
     
-    func setNavigation() {
+    private func setNavigation() {
         navigationItem.title = "Book introduction"
         
         let hamburgerButtonItem = UIBarButtonItem(title: ":", style: .done, target: self, action: #selector(buttonPressed(_:)))
@@ -62,24 +62,36 @@ final class BookDetailsViewController: UIViewController {
             return nil
         }
     }
-
-    func updateMyBookButton() {
-
+    
+    private func updateMyBookButton() {
+        
         let view = self.view as! BookDetailsView
-
+        
         let myBookModel = MyBookModel()
         let myBook = myBookModel.getBy(idBook: book!.idBook)
         if myBook != nil {
-            view.myBookButton.setTitle("Add MyBooks", for: .normal)
+            view.myBookButton.setTitle("Add Mybooks", for: .normal)
+            view.myBookButton.setTitleColor(.red, for: .normal)
+            view.myBookButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            view.myBookButton.layer.cornerRadius = 5
+            view.myBookButton.layer.borderColor = UIColor.red.cgColor
+            view.myBookButton.layer.borderWidth = 2
+            view.myBookButton.backgroundColor = .white
         } else {
             view.myBookButton.setTitle("Remove MyBooks", for: .normal)
+            view.myBookButton.setTitleColor(.lightGray, for: .normal)
+            view.myBookButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            view.myBookButton.layer.cornerRadius = 5
+            view.myBookButton.layer.borderColor = UIColor.lightGray.cgColor
+            view.myBookButton.layer.borderWidth = 2
+            view.myBookButton.backgroundColor = .white
         }
     }
-
+    
     @objc
-    func myBookButtonPressed(_ sender: UIBarButtonItem) {
+    private func myBookButtonPressed(_ sender: UIBarButtonItem) {
         print("my book button touched.")
-
+        
         let myBookModel = MyBookModel()
         let myBook = myBookModel.getBy(idBook: book!.idBook)
         if myBook != nil {
@@ -89,14 +101,14 @@ final class BookDetailsViewController: UIViewController {
         }
         updateMyBookButton()
     }
-
+    
     @objc
-    func purchaseButtonPressed(_ sender: UIBarButtonItem) {
+    private func purchaseButtonPressed(_ sender: UIBarButtonItem) {
         print("purchase button touched.")
     }
     
     @objc
-    func buttonPressed(_ sender: UIBarButtonItem) {
+    private func buttonPressed(_ sender: UIBarButtonItem) {
         print("button touched.")
     }
     

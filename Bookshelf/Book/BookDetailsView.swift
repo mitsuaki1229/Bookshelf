@@ -12,27 +12,40 @@ class BookDetailsView: UIView {
     let imageView = UIImageView(frame: .zero)
     let nameBookLabel = { () -> UILabel in
         let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20.0)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     let authorLabel = { () -> UILabel in
         let label = UILabel()
-        label.adjustsFontSizeToFitWidth = true
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 12.0)
         return label
     }()
     let publisherLabel = { () -> UILabel in
         let label = UILabel()
-        label.adjustsFontSizeToFitWidth = true
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 12.0)
         return label
     }()
     let myBookButton = { () -> UIButton in
         let button = UIButton()
         button.setTitle("Add Mybook", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = UIColor.red.cgColor
+        button.layer.borderWidth = 2
+        button.backgroundColor = .white
         return button
     }()
     let purchaseButton = { () -> UIButton in
         let button = UIButton()
         button.setTitle("Purchase", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.layer.cornerRadius = 5
+        button.backgroundColor = .red
         return button
     }()
     private let goalView = { () -> UIView in
@@ -133,8 +146,6 @@ class BookDetailsView: UIView {
         nameBookLabel.backgroundColor = .green
         authorLabel.backgroundColor = .brown
         publisherLabel.backgroundColor = .cyan
-        myBookButton.backgroundColor = .red
-        purchaseButton.backgroundColor = .darkGray
         goalView.backgroundColor = .systemPink
         learningRateView.backgroundColor = .orange
         learningTimeView.backgroundColor = .purple
@@ -142,7 +153,7 @@ class BookDetailsView: UIView {
 #endif
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(imageView)
         addSubview(nameBookLabel)
         addSubview(authorLabel)
@@ -155,7 +166,7 @@ class BookDetailsView: UIView {
         addSubview(learningMethodView)
     }
     
-    func installConstraints() {
+    private func installConstraints() {
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true

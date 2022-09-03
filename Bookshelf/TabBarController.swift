@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         setUpViewControllers()
-
+        
         selectedIndex = 1
     }
     
@@ -28,24 +28,24 @@ class TabBarController: UITabBarController {
     
     private func setUpViewControllers() {
         var viewControllers: [UIViewController] = []
-
+        
         viewControllers.append({ () -> UINavigationController in
             let vc = HomeViewController()
             vc.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "HomeItemIcon"), tag: 1)
             return UINavigationController(rootViewController: vc)
-            }())
+        }())
         
         viewControllers.append({ () -> UINavigationController in
             let vc = FindViewController()
             vc.tabBarItem = UITabBarItem(title: "Find", image: #imageLiteral(resourceName: "FindItemIcon"), tag: 2)
             return UINavigationController(rootViewController: vc)
-            }())
+        }())
         
         viewControllers.append({ () -> UINavigationController in
             let vc = LibraryViewController()
             vc.tabBarItem = UITabBarItem(title: "Library", image: #imageLiteral(resourceName: "LibraryItemIcon"), tag: 3)
             return UINavigationController(rootViewController: vc)
-            }())
+        }())
         
         self.viewControllers = viewControllers
     }
