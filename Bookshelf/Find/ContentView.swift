@@ -14,10 +14,6 @@ class ContentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-#if DEBUG
-        backgroundColor = .systemIndigo
-#endif
-        
         addSubviews()
         installConstraints()
     }

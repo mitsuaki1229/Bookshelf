@@ -50,6 +50,8 @@ class BookDetailsView: UIView {
     }()
     private let goalView = { () -> UIView in
         let view = UIView()
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
         
         let label = { () -> UILabel in
             let label = UILabel()
@@ -71,6 +73,8 @@ class BookDetailsView: UIView {
     }()
     private let learningRateView = { () -> UIView in
         let view = UIView()
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
         
         let label = { () -> UILabel in
             let label = UILabel()
@@ -92,6 +96,8 @@ class BookDetailsView: UIView {
     }()
     private let learningTimeView = { () -> UIView in
         let view = UIView()
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
         
         let label = { () -> UILabel in
             let label = UILabel()
@@ -113,6 +119,8 @@ class BookDetailsView: UIView {
     }()
     private let learningMethodView = { () -> UIView in
         let view = UIView()
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
         
         let label = { () -> UILabel in
             let label = UILabel()
@@ -136,21 +144,10 @@ class BookDetailsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .systemIndigo
+        backgroundColor = .white
         
         addSubviews()
         installConstraints()
-        
-#if DEBUG
-        imageView.backgroundColor = .yellow
-        nameBookLabel.backgroundColor = .green
-        authorLabel.backgroundColor = .brown
-        publisherLabel.backgroundColor = .cyan
-        goalView.backgroundColor = .systemPink
-        learningRateView.backgroundColor = .orange
-        learningTimeView.backgroundColor = .purple
-        learningMethodView.backgroundColor = .magenta
-#endif
     }
     
     private func addSubviews() {
@@ -205,28 +202,28 @@ class BookDetailsView: UIView {
         purchaseButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         goalView.translatesAutoresizingMaskIntoConstraints = false
-        goalView.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        goalView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
         goalView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         goalView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        goalView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        goalView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         learningRateView.translatesAutoresizingMaskIntoConstraints = false
-        learningRateView.topAnchor.constraint(equalTo: goalView.bottomAnchor).isActive = true
+        learningRateView.topAnchor.constraint(equalTo: goalView.bottomAnchor, constant: 10).isActive = true
         learningRateView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         learningRateView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        learningRateView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        learningRateView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         learningTimeView.translatesAutoresizingMaskIntoConstraints = false
-        learningTimeView.topAnchor.constraint(equalTo: learningRateView.bottomAnchor).isActive = true
+        learningTimeView.topAnchor.constraint(equalTo: learningRateView.bottomAnchor, constant: 10).isActive = true
         learningTimeView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         learningTimeView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        learningTimeView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        learningTimeView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         learningMethodView.translatesAutoresizingMaskIntoConstraints = false
-        learningMethodView.topAnchor.constraint(equalTo: learningTimeView.bottomAnchor).isActive = true
+        learningMethodView.topAnchor.constraint(equalTo: learningTimeView.bottomAnchor, constant: 10).isActive = true
         learningMethodView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         learningMethodView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        learningMethodView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        learningMethodView.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
     required init?(coder: NSCoder) {

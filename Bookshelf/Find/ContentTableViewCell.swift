@@ -38,11 +38,6 @@ final class ContentTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-#if DEBUG
-        titleLabel.backgroundColor = .green
-        collectionView.backgroundColor = .yellow
-#endif
-        
         addSubviews()
         installConstraints()
     }
