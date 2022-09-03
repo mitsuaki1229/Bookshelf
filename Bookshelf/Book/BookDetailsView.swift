@@ -35,11 +35,91 @@ class BookDetailsView: UIView {
         button.setTitle("Purchase", for: .normal)
         return button
     }()
-    let goalView = UIView(frame: .zero)
-    let learningRateView = UIView(frame: .zero)
-    let learningTimeView = UIView(frame: .zero)
-    let learningMethodView = UIView(frame: .zero)
-    
+    private let goalView = { () -> UIView in
+        let view = UIView()
+        
+        let label = { () -> UILabel in
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
+            label.textColor = .gray
+            label.textAlignment = .left
+            label.sizeToFit()
+            label.text = "Mastery rate target, Expiration date."
+            return label
+        }()
+
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        return view
+    }()
+    private let learningRateView = { () -> UIView in
+        let view = UIView()
+        
+        let label = { () -> UILabel in
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
+            label.textColor = .gray
+            label.textAlignment = .left
+            label.sizeToFit()
+            label.text = "Learning rate."
+            return label
+        }()
+
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        return view
+    }()
+    private let learningTimeView = { () -> UIView in
+        let view = UIView()
+        
+        let label = { () -> UILabel in
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
+            label.textColor = .gray
+            label.textAlignment = .left
+            label.sizeToFit()
+            label.text = "Learning time."
+            return label
+        }()
+
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        return view
+    }()
+    private let learningMethodView = { () -> UIView in
+        let view = UIView()
+        
+        let label = { () -> UILabel in
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
+            label.textColor = .gray
+            label.textAlignment = .left
+            label.sizeToFit()
+            label.text = "Learning method."
+            return label
+        }()
+
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        return view
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -58,7 +138,7 @@ class BookDetailsView: UIView {
         goalView.backgroundColor = .systemPink
         learningRateView.backgroundColor = .orange
         learningTimeView.backgroundColor = .purple
-        learningMethodView.backgroundColor = .systemIndigo
+        learningMethodView.backgroundColor = .magenta
         // !!!: debug cooler
     }
 
